@@ -31,9 +31,11 @@ export default {
 
   methods: {
     async numberToFact() {
-      let res = await fetch(`numbersapi.com/${this.number}?json`);
+      //let res = await fetch(`numbersapi.com/${this.number}?json`);
+
+      var res = await fetch(`http://localhost:8080/facts/${this.number}`);
       let fact = await res.json();
-      this.currentFact = fact.text;
+      this.currentFact = fact.fact;
     }
   }
 };
