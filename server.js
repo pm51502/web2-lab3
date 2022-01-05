@@ -23,7 +23,8 @@ app.use(express.static("dist"));
 app.use(cors());
 
 app.get("/facts", function (req, res) {
-  res.json(factsArr);
+  var sliced = factsArr.slice(0, 100);
+  res.json(sliced);
 });
 
 app.get("/facts/:num", function(req, res) {
