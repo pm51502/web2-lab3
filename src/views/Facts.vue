@@ -12,7 +12,7 @@ export default {
   name: "Facts",
 
   components: {
-    FactTable
+    FactTable,
   },
 
   async created() {
