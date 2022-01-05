@@ -31,8 +31,6 @@ export default {
 
   methods: {
     async numberToFact() {
-      //let res = await fetch(`numbersapi.com/${this.number}?json`);
-
       var res = await fetch(`https://web2lab3.herokuapp.com/facts/${this.number}`);
       let fact = await res.json();
       this.currentFact = fact.fact;

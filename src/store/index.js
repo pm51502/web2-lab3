@@ -19,21 +19,8 @@ export default createStore({
 
   actions: {
     async fetchFacts(context) {
-      // let res = await fetch("numbersapi.com/1..50?json");
-      // let facts = await res.json();
-
-      // let factsArr = []
-      // for(let key in facts) {
-      //   factsArr.push({
-      //     number: key,
-      //     fact: facts[key]
-      //   });
-      // }
-
       var res = await fetch("https://web2lab3.herokuapp.com/facts");
       var factsArr = await res.json();
-
-      //console.log(factsArr);
       context.commit("setFacts", factsArr);
     }
   },
