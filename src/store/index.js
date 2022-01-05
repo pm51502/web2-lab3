@@ -30,7 +30,7 @@ export default createStore({
       //   });
       // }
 
-      var res = await fetch("http://localhost:8080/facts");
+      var res = await fetch("https://web2lab3.herokuapp.com/facts");
       var factsArr = await res.json();
 
       //console.log(factsArr);
