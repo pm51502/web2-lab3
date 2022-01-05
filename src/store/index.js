@@ -19,7 +19,7 @@ export default createStore({
 
   actions: {
     async fetchFacts(context) {
-      let res = await fetch("http://numbersapi.com/1..50?json");
+      let res = await fetch("numbersapi.com/1..50?json");
       let facts = await res.json();
 
       let factsArr = []
