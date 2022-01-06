@@ -20,7 +20,6 @@ export default createStore({
   actions: {
     async fetchFacts(context) {
       var res = await fetch("https://web2lab3.herokuapp.com/api/facts");
-      //var res = await fetch("http://localhost:8080/api/facts");
       var factsArr = await res.json();
       context.commit("setFacts", factsArr);
     }
