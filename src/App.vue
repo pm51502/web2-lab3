@@ -14,6 +14,11 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #nav {
@@ -31,7 +36,7 @@
 }
 
 .wrapper {
-  width: 60%;
+  width: 50%;
 }
 
 </style>

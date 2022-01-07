@@ -9,7 +9,8 @@
     <tbody>
       <Fact v-for="fact in facts" 
             :key="fact.number" 
-            :fact="fact" />
+            :fact="fact" 
+            @mark-fact="markFact"/>
     </tbody>
   </table>
 </template>
@@ -27,6 +28,12 @@ export default {
   components: {
     Fact,
   },
+
+  methods: {
+    async markFact(number) {
+      await this.$store.dispatch("markFact", number);
+    }
+  }
 };
 </script>
 

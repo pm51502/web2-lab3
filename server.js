@@ -13,6 +13,7 @@ fs.readFile("facts.json", function (err, data) {
     factsArr.push({
       number: key,
       fact: facts[key],
+      marked: false
     });
   }
 });
@@ -21,7 +22,7 @@ app.use(express.static("dist"));
 app.use(cors());
 
 app.get("/api/facts", function (req, res) {
-  var sliced = factsArr.slice(0, 100);
+  var sliced = factsArr.slice(0, 101);
   res.json(sliced);
 });
 

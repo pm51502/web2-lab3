@@ -14,7 +14,7 @@ export default createStore({
   mutations: {
     setFacts(state, facts) {
       state.facts = facts;
-    }
+    },
   },
 
   actions: {
@@ -22,6 +22,11 @@ export default createStore({
       var res = await fetch("https://web2lab3.herokuapp.com/api/facts");
       var factsArr = await res.json();
       context.commit("setFacts", factsArr);
+    },
+    markFact(context, number) {
+      console.log("marking fact (action)", number);
+      var newArr = context.getters.facts.map(f => f.number == number ? {...f, marked: !f.marked} : f);
+      context.commit("setFacts", newArr);
     }
   },
 

@@ -1,6 +1,7 @@
 <template>
-    <tr>
-        <td>{{ fact.number }}</td>
+    <tr @dblclick="$emit('mark-fact', fact.number)"
+        :class="[fact.marked ? 'marked' : '']">
+        <td >{{ fact.number }}</td>
         <td class="text-start">{{ fact.fact }}</td>
     </tr>
 </template>
@@ -13,3 +14,15 @@ export default {
   }
 };
 </script>
+ 
+<style scoped>
+
+tr {
+  cursor: pointer;
+}
+
+.marked {
+  border-left: 2px solid #42b983;
+}
+
+</style>
